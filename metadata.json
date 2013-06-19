@@ -1,0 +1,25 @@
+{
+  "name": "kreczko-apelpublisher",
+  "author": "kreczko",
+  "description": "",
+  "license": "",
+  "project_page": "",
+  "source": "",
+  "summary": "",
+  "version": "",
+  "checksums": {
+    "Modulefile": "8f9e0ff023acf8f9080dd2e647e03ba8",
+    "README.md": "a1d25943b0e022050ffc6fe786137e75",
+    "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
+    "manifests/init.pp": "3ca337c1af2249b2f0931c535c3fc4aa",
+    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "spec/spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
+    "tests/init.pp": "54fa00a0286581e6effb80fc6f48b770"
+  },
+  "dependencies": [
+    {
+      "name": "puppetlabs/mysql",
+      "version_requirement": "\u003e\u003d0.6.1"
+    }
+  ]
+}

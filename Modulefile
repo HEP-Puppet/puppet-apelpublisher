@@ -1,0 +1,10 @@
+name 'kreczko-apelpublisher'
+version ''
+
+author 'kreczko'
+license ''
+project_page ''
+source ''
+summary ''
+description ''
+dependency 'puppetlabs/mysql', '>=0.6.1'
