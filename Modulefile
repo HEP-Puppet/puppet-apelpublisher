@@ -1,5 +1,5 @@
 name 'kreczko-apelpublisher'
-version ''
+version '0.0.1'
 
 author 'kreczko'
 license ''
