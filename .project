@@ -3,6 +3,7 @@
 	<name>puppet-apelpublisher</name>
 	<comment></comment>
 	<projects>
+		<project>puppet-yumhelper</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
