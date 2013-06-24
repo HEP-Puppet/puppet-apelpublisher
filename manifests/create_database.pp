@@ -7,9 +7,9 @@ class apelpublisher::create_database (
   apelpublisher::db_permissions { 'localhost': }
 
   create_resources('apelpublisher::db_permissions', $list_of_apel_parser_hosts)
-  
-  exec{'create-apel-mysql-tables':
-    command => 'mysql -p apelclient < /usr/share/apel/client.sql',
-    require => File['/usr/share/apel/client.sql'],
+
+  exec { 'create-apel-mysql-tables':
+    command => '/usr/bin/mysql -p apelclient < /usr/share/apel/client.sql',
+    require => [File['/usr/share/apel/client.sql'], Class["mysql"], Class["mysql::server"]],
   }
 }
