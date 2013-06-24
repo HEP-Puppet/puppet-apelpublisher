@@ -45,8 +45,6 @@ class apelpublisher::install (
     }
   }
 
-  class { 'mysql':
-    root_password => $mysql_root_password,
-  }
+  class { 'mysql':}
 
 }
