@@ -7,23 +7,27 @@ class apelpublisher::install (
   class { "apelpublisher::ca_policy_egi_core": }
 
   # apel-ssm
+  $apel_ssm    = 'http://apel.github.io/apel/rpms/SL6/apel-ssm-2.1.0-0.el6.noarch.rpm'
   # apel-lib
+  $apel_lib    = 'http://apel.github.io/apel/rpms/SL6/apel-lib-1.1.2-0.el6.noarch.rpm'
   # apel-client
-  package { 'http://apel.github.io/apel/rpms/SL6/apel-ssm-2.1.0-0.el6.noarch.rpm':
+  $apel_client = 'http://apel.github.io/apel/rpms/SL6/apel-client-1.1.2-0.el6.noarch.rpm'
+
+  package { $apel_ssm:
     ensure  => present,
-    alias   => "apel-ssm",
+    alias   => apel_ssm,
     require => Yumrepo['epel'],
   }
 
-  package { 'http://apel.github.io/apel/rpms/SL6/apel-lib-1.1.2-0.el6.noarch.rpm':
+  package { $apel_lib:
     ensure  => present,
-    alias   => "apel-lib",
+    alias   => apel_lib,
     require => Yumrepo['epel'],
   }
 
-  package { 'http://apel.github.io/apel/rpms/SL6/apel-client-1.1.2-0.el6.noarch.rpm':
+  package { $apel_client:
     ensure  => present,
-    alias   => "apel-client",
+    alias   => apel_client,
     require => Yumrepo['epel'],
   }
 
@@ -34,7 +38,7 @@ class apelpublisher::install (
     source => "puppet:///modules/${module_name}/client.sql",
   }
 
-  Package['apel-ssm'] -> Package['apel-lib'] -> Package['apel-client'] -> File['/usr/share/apel/client.sql']
+  Package[$apel_ssm] -> Package[$apel_lib] -> Package[$apel_client] -> File['/usr/share/apel/client.sql']
 
   ############################
   # MySQL server and settings
