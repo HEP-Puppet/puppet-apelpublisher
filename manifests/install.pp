@@ -13,22 +13,28 @@ class apelpublisher::install (
   # apel-client
   $apel_client = 'http://apel.github.io/apel/rpms/SL6/apel-client-1.1.2-0.el6.noarch.rpm'
 
-  package { $apel_ssm:
-    ensure  => present,
-    alias   => apel_ssm,
-    require => Yumrepo['epel'],
+  package { "apel-ssm":
+    ensure   => present,
+    source   => $apel_ssm,
+    provider => rpm,
+    alias    => apel_ssm,
+    require  => Yumrepo['epel'],
   }
 
-  package { $apel_lib:
-    ensure  => present,
-    alias   => apel_lib,
-    require => Yumrepo['epel'],
+  package { "apel-lib":
+    ensure   => present,
+    source   => $apel_lib,
+    provider => rpm,
+    alias    => apel_lib,
+    require  => Yumrepo['epel'],
   }
 
-  package { $apel_client:
-    ensure  => present,
-    alias   => apel_client,
-    require => Yumrepo['epel'],
+  package { "apel-client":
+    ensure   => present,
+    source   => $apel_client,
+    provider => rpm,
+    alias    => apel_client,
+    require  => Yumrepo['epel'],
   }
 
   file { '/usr/share/apel/client.sql':
