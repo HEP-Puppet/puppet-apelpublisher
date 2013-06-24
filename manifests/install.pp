@@ -44,7 +44,7 @@ class apelpublisher::install (
     source => "puppet:///modules/${module_name}/client.sql",
   }
 
-  Package[apel_ssm] -> Package[apel_lib] -> Package[apel_client] -> File['/usr/share/apel/client.sql']
+  Package["apel-ssm"] -> Package["apel-lib"] -> Package["apel-client"] -> File['/usr/share/apel/client.sql']
 
   ############################
   # MySQL server and settings
