@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>puppet-apelpublisher</name>
+	<name>apelpublisher</name>
 	<comment></comment>
 	<projects>
+		<project>puppetlabs-mysql</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
