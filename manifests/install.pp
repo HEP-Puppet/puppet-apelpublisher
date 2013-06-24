@@ -9,21 +9,21 @@ class apelpublisher::install (
   # apel-ssm
   # apel-lib
   # apel-client
-  package { 'apel-ssm':
+  package { 'http://apel.github.io/apel/rpms/SL6/apel-ssm-2.1.0-0.el6.noarch.rpm':
     ensure  => present,
-    source  => "http://apel.github.io/apel/rpms/SL6/apel-ssm-2.1.0-0.el6.noarch.rpm",
+    alias   => "apel-ssm",
     require => Yumrepo['epel'],
   }
 
-  package { 'apel-lib':
+  package { 'http://apel.github.io/apel/rpms/SL6/apel-lib-1.1.2-0.el6.noarch.rpm':
     ensure  => present,
-    source  => "http://apel.github.io/apel/rpms/SL6/apel-lib-1.1.2-0.el6.noarch.rpm",
+    alias   => "apel-lib",
     require => Yumrepo['epel'],
   }
 
-  package { 'apel-client':
+  package { 'http://apel.github.io/apel/rpms/SL6/apel-client-1.1.2-0.el6.noarch.rpm':
     ensure  => present,
-    source  => "http://apel.github.io/apel/rpms/SL6/apel-client-1.1.2-0.el6.noarch.rpm",
+    alias   => "apel-client",
     require => Yumrepo['epel'],
   }
 
@@ -45,6 +45,7 @@ class apelpublisher::install (
     }
   }
 
-  class { 'mysql':}
+  class { 'mysql':
+  }
 
 }

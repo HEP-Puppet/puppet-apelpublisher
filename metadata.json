@@ -22,7 +22,7 @@
     "manifests/create_database.pp": "926d1d378dd152527f13db8b31fb3a19",
     "manifests/db_permissions.pp": "627e4b8b9d5906e8dc3fe0161ca51207",
     "manifests/init.pp": "64e41f1f8d826cab8a49c1ddd8a32f7e",
-    "manifests/install.pp": "04e2da5ea547938435d5ff8fe65a695f",
+    "manifests/install.pp": "600999f46b56789fa73b5700fddb073d",
     "manifests/params.pp": "d0e5eb1e314037e99884b8e41079d5b8",
     "manifests/repositories.pp": "f16c2ed9928b7fad396e10f81e4c2ea2",
     "manifests/service.pp": "73ddee3388e7109d74573c8ac7a57bda",
