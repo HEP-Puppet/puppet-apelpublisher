@@ -1,8 +1,7 @@
 class apelpublisher::params {
   $mysql_root_password       = "changeme"
   $mysql_apel_password       = "pleasechangeme"
-  $list_of_apel_parser_hosts = [
-    ]
+  $list_of_apel_parser_hosts = []
 
   $mysql_configure_backup    = true
   $mysql_backup_folder       = "/tmp/mysql_backup"
@@ -27,7 +26,7 @@ class apelpublisher::params {
   $ssm_enabled               = true
 
   $logging_logfile           = "/var/log/apel/client.log"
-  $logging_level                     = "INFO"
-  $logging_console                   = true
+  $logging_level             = "INFO"
+  $logging_console           = true
 
 }
