@@ -3,15 +3,20 @@ class apelpublisher::install (
   $mysql_backup_folder       = $apelpublisher::params::mysql_backup_folder,
   $mysql_apel_password       = $apelpublisher::params::mysql_apel_password,
   $list_of_apel_parser_hosts = $apelpublisher::params::list_of_apel_parser_hosts) {
+  if !$mysql_root_password {
+    notify { "Using empty ROOT password. Please fix.": }
+  }
+
   # ca-policy-egi-core
-  class { "apelpublisher::ca_policy_egi_core": }
+  class { "apelpublisher::ca_policy_egi_core":
+  }
 
   # apel-ssm
-  $apel_ssm    = 'http://apel.github.io/apel/rpms/SL6/apel-ssm-2.1.0-0.el6.noarch.rpm'
+  $apel_ssm    = $apelpublisher::params::apel_ssm_rpm
   # apel-lib
-  $apel_lib    = 'http://apel.github.io/apel/rpms/SL6/apel-lib-1.1.2-0.el6.noarch.rpm'
+  $apel_lib    = $apelpublisher::params::apel_lib_rpm
   # apel-client
-  $apel_client = 'http://apel.github.io/apel/rpms/SL6/apel-client-1.1.2-0.el6.noarch.rpm'
+  $apel_client = $apelpublisher::params::apel_client_rpm
 
   package { "apel-ssm":
     ensure   => present,

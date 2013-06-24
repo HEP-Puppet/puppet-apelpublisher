@@ -1,4 +1,7 @@
 class apelpublisher::params {
+  $apel_ssm_rpm              = 'http://apel.github.io/apel/rpms/SL6/apel-ssm-2.1.0-0.el6.noarch.rpm'
+  $apel_lib_rpm              = 'http://apel.github.io/apel/rpms/SL6/apel-lib-1.1.2-0.el6.noarch.rpm'
+  $apel_client_rpm           = 'http://apel.github.io/apel/rpms/SL6/apel-client-1.1.2-0.el6.noarch.rpm'
   $mysql_root_password       = "changeme"
   $mysql_apel_password       = "pleasechangeme"
   $list_of_apel_parser_hosts = []
