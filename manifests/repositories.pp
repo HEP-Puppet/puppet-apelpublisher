@@ -1,9 +1,9 @@
 class apelpublisher::repositories {
   yumrepo { 'epel':
     descr          => 'Extra Packages for Enterprise Linux 6 - $basearch',
-    enabled        => true,
+    enabled        => 1,
     failovermethod => 'priority',
-    gpgcheck       => '1',
+    gpgcheck       => 1,
     gpgkey         => 'http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6',
     mirrorlist     => 'https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=$basearch',
   }
