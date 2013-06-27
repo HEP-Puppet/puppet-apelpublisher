@@ -12,24 +12,8 @@ class apelpublisher::install (
   }
 
 
-  package { "apel-ssm":
+  package { ["apel-ssm", "apel-lib", "apel-client"]:
     ensure   => present,
-    provider => rpm,
-    alias    => apel_ssm,
-    require  => [Yumrepo['epel'], Yumrepo['EMI 3 base']],
-  }
-
-  package { "apel-lib":
-    ensure   => present,
-    provider => rpm,
-    alias    => apel_lib,
-    require  => [Yumrepo['epel'], Yumrepo['EMI 3 base']],
-  }
-
-  package { "apel-client":
-    ensure   => present,
-    provider => rpm,
-    alias    => apel_client,
     require  => [Yumrepo['epel'], Yumrepo['EMI 3 base']],
   }
 
