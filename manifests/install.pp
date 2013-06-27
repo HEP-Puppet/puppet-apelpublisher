@@ -17,7 +17,7 @@ class apelpublisher::install (
     require  => [Yumrepo['epel'], Yumrepo['EMI_3_base']],
   }
 
-  Package["apel-ssm"] -> Package["apel-lib"] -> Package["apel-client"] -> File['/usr/share/apel/client.sql']
+  Package["apel-ssm"] -> Package["apel-lib"] -> Package["apel-client"]
 
   ############################
   # MySQL server and settings
