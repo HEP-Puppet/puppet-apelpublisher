@@ -23,11 +23,11 @@ class apelpublisher::create_database (
   exec { 'create-apel-mysql-tables':
     command => '/usr/bin/mysql --defaults-file=/root/.my.cnf apelclient < /usr/share/apel/client.sql',
     require => [
-      File['/usr/share/apel/client.sql'],
-      Class["mysql"],
-      Class["mysql::server"],
+      Class["apelpublisher::install"],
       Database[$mysql_database]],
     # needs check if already exists, otherwise will wipe the tables!
-    onlyif  => '/usr/bin/test `/usr/bin/mysql --defaults-file=/root/.my.cnf -e "use apelclient; show tables;SELECT FOUND_ROWS();" 2>&1 | cut -f1 | egrep "^(0|[1-9][0-9]*)$"` -eq 0',
+    onlyif  => [
+      '/usr/bin/test `/usr/bin/mysql --defaults-file=/root/.my.cnf -e "use apelclient; show tables;SELECT FOUND_ROWS();" 2>&1 | cut -f1 | egrep "^(0|[1-9][0-9]*)$"` -eq 0',
+      'test -f /usr/share/apel/client.sql'],
   }
 }

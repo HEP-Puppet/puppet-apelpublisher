@@ -17,13 +17,6 @@ class apelpublisher::install (
     require  => [Yumrepo['epel'], Yumrepo['EMI_3_base']],
   }
 
-  file { '/usr/share/apel/client.sql':
-    owner  => "root",
-    group  => "root",
-    ensure => "present",
-    source => "puppet:///modules/${module_name}/client.sql",
-  }
-
   Package["apel-ssm"] -> Package["apel-lib"] -> Package["apel-client"] -> File['/usr/share/apel/client.sql']
 
   ############################
