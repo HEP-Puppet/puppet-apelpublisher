@@ -14,7 +14,7 @@ class apelpublisher::install (
 
   package { ["apel-ssm", "apel-lib", "apel-client"]:
     ensure   => present,
-    require  => [Yumrepo['epel'], Yumrepo['EMI 3 base']],
+    require  => [Yumrepo['epel'], Yumrepo['EMI_3_base']],
   }
 
   file { '/usr/share/apel/client.sql':
