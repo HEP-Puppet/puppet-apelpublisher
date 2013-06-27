@@ -16,7 +16,7 @@
     "lib/facter/apel_version.rb": "e3aca92cd29851409f4b4b88cd231b02",
     "manifests/ca_policy_egi_core.pp": "f769101fc5cfe839a1ecc79db71da8ac",
     "manifests/config.pp": "881edd71c95fa206d65b12680ee3b69c",
-    "manifests/create_database.pp": "880c51578e25b09fcfff901924f099bf",
+    "manifests/create_database.pp": "61bdf76a728fddb52bf0b30d70b30b23",
     "manifests/db_permissions.pp": "93722b18c18e2a2d6ab47176c7f7d59c",
     "manifests/init.pp": "8514c8ef22bf2aa5f4cce3170f7f536c",
     "manifests/install.pp": "febf2a25496091830b32c8b2430cd8de",
