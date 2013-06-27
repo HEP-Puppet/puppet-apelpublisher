@@ -28,6 +28,6 @@ class apelpublisher::create_database (
       Class["mysql::server"],
       Database[$mysql_database]],
     # needs check if already exists, otherwise will wipe the tables!
-    onlyif  => '/usr/bin/mysql --defaults-file=/root/.my.cnf -e "use apelclient; show tables;SELECT FOUND_ROWS();" 2>&1 | cut -f1 | egrep "^(0|[1-9][0-9]*)$"'
+    onlyif  => '/usr/bin/test `/usr/bin/mysql --defaults-file=/root/.my.cnf -e "use apelclient; show tables;SELECT FOUND_ROWS();" 2>&1 | cut -f1 | egrep "^(0|[1-9][0-9]*)$"` -eq 0',
   }
 }
