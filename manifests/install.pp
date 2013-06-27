@@ -11,35 +11,26 @@ class apelpublisher::install (
   class { "apelpublisher::ca_policy_egi_core":
   }
 
-  # apel-ssm
-  $apel_ssm    = $apelpublisher::params::apel_ssm_rpm
-  # apel-lib
-  $apel_lib    = $apelpublisher::params::apel_lib_rpm
-  # apel-client
-  $apel_client = $apelpublisher::params::apel_client_rpm
 
   package { "apel-ssm":
     ensure   => present,
-    source   => $apel_ssm,
     provider => rpm,
     alias    => apel_ssm,
-    require  => Yumrepo['epel'],
+    require  => [Yumrepo['epel'], Yumrepo['EMI 3 base']],
   }
 
   package { "apel-lib":
     ensure   => present,
-    source   => $apel_lib,
     provider => rpm,
     alias    => apel_lib,
-    require  => Yumrepo['epel'],
+    require  => [Yumrepo['epel'], Yumrepo['EMI 3 base']],
   }
 
   package { "apel-client":
     ensure   => present,
-    source   => $apel_client,
     provider => rpm,
     alias    => apel_client,
-    require  => Yumrepo['epel'],
+    require  => [Yumrepo['epel'], Yumrepo['EMI 3 base']],
   }
 
   file { '/usr/share/apel/client.sql':

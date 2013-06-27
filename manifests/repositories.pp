@@ -15,4 +15,36 @@ class apelpublisher::repositories {
     enabled  => 1,
     priority => 80,
   }
+
+  yumrepo { 'EMI 3 base':
+    baseurl  => "http://emisoft.web.cern.ch/emisoft/dist/EMI/3/sl6/\$basearch/base",
+    gpgcheck => 1,
+    gpgkey   => 'http://emisoft.web.cern.ch/emisoft/dist/EMI/3/RPM-GPG-KEY-emi',
+    enabled  => 1,
+    priority => 40,
+  }
+
+  yumrepo { 'EMI 3 contribs':
+    baseurl  => "http://emisoft.web.cern.ch/emisoft/dist/EMI/3/sl6/\$basearch/contribs",
+    gpgcheck => 1,
+    gpgkey   => 'http://emisoft.web.cern.ch/emisoft/dist/EMI/3/RPM-GPG-KEY-emi',
+    enabled  => 1,
+    priority => 40,
+  }
+
+  yumrepo { 'EMI 3 third-party':
+    baseurl  => "http://emisoft.web.cern.ch/emisoft/dist/EMI/3/sl6/\$basearch/third-party",
+    gpgcheck => 1,
+    gpgkey   => 'http://emisoft.web.cern.ch/emisoft/dist/EMI/3/RPM-GPG-KEY-emi',
+    enabled  => 1,
+    priority => 40,
+  }
+
+  yumrepo { 'EMI 3 updates':
+    baseurl  => "http://emisoft.web.cern.ch/emisoft/dist/EMI/3/sl6/\$basearch/updates",
+    gpgcheck => 1,
+    gpgkey   => 'http://emisoft.web.cern.ch/emisoft/dist/EMI/3/RPM-GPG-KEY-emi',
+    enabled  => 1,
+    priority => 40,
+  }
 }
