@@ -5,7 +5,7 @@
 Facter.add(:apel_version) do
   setcode do
     begin
-      "0.0.1"
+      Facter::Util::Resolution.exec("/usr/bin/apelclient --version").split(" ")[2] 
     end
   end
 end
