@@ -29,4 +29,8 @@ class apelpublisher::params {
   $logging_level             = "INFO"
   $logging_console           = true
 
+  # cron
+  $cron_minutes              = 35
+  $cron_hours                = 1
+
 }
