@@ -6,9 +6,9 @@
   "project_page": "https://github.com/HEP-Puppet",
   "source": "git@github.com:HEP-Puppet/puppet-apelpublisher.git",
   "summary": "A Puppet module for the installation and setup of a Apel publisher",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "checksums": {
-    "Modulefile": "5a556463e24c2fe5010a703f361b2f74",
+    "Modulefile": "405478580f69d5601a7d692944d006da",
     "README.md": "a1d25943b0e022050ffc6fe786137e75",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
     "files/dns": "e79348ff1015be936178a1d7e2baafd6",
