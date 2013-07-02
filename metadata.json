@@ -20,7 +20,7 @@
     "manifests/cron.pp": "a24560d1b8f36bd6582974872c63aa91",
     "manifests/db_permissions.pp": "93722b18c18e2a2d6ab47176c7f7d59c",
     "manifests/init.pp": "ec94f8f05f2eec2e4ace39f6eac9e5ec",
-    "manifests/install.pp": "28df919e528da3dc29a2bb8c298a4049",
+    "manifests/install.pp": "7ea19666cb4fba55493f88ccc7b1997c",
     "manifests/params.pp": "b12d4753bcacf694674b4deeb1c4cb17",
     "manifests/repositories.pp": "7e10b42bee692cb501de1fa939dcb4ef",
     "manifests/uninstall.pp": "6c2b14dd9f36ed2aa39019f3b2970ec2",
