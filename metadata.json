@@ -23,6 +23,7 @@
     "manifests/install.pp": "28df919e528da3dc29a2bb8c298a4049",
     "manifests/params.pp": "813b2fae7996090f26ae2ef34513c7db",
     "manifests/repositories.pp": "7e10b42bee692cb501de1fa939dcb4ef",
+    "manifests/uninstall.pp": "6c2b14dd9f36ed2aa39019f3b2970ec2",
     "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
     "spec/spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
     "templates/client.cfg.erb": "fe9a3f33f6dd9894267a8b8fe4ca43d4",
