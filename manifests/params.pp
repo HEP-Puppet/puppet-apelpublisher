@@ -11,7 +11,7 @@ class apelpublisher::params {
   $mysql_database            = "apelclient"
   $mysql_user                = "apel"
 
-  $site_name                 = "T4_LFT_Changeme"
+  $site_name                 = "UKI-SOUTHGRID-XXX-HEP"
   $ldap_host                 = "lcg-bdii.cern.ch"
   $ldap_port                 = 2170
 
