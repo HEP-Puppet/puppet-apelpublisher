@@ -13,7 +13,7 @@
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
     "files/dns": "e79348ff1015be936178a1d7e2baafd6",
     "files/receiver.cfg": "4ab46d7aa62f1bdf9ee35d85539fab64",
-    "lib/facter/apel_version.rb": "e3aca92cd29851409f4b4b88cd231b02",
+    "lib/facter/apel_version.rb": "1e0b4343ef3820cdd8939e4cfca7f02d",
     "manifests/ca_policy_egi_core.pp": "f769101fc5cfe839a1ecc79db71da8ac",
     "manifests/config.pp": "881edd71c95fa206d65b12680ee3b69c",
     "manifests/create_database.pp": "312ebcbe3efe4a3f517cb76ba670661b",
