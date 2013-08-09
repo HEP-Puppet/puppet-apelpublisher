@@ -9,6 +9,7 @@
   "version": "0.0.2",
   "checksums": {
     ".gemfile": "f2a73f3c76933e38e004d3c2a939c56c",
+    ".nodeset.yml": "4032f807136add9d6474b49cd93783cb",
     ".travis.yml": "423b3afa6b2a26cee85e82b1662aafcf",
     "Modulefile": "405478580f69d5601a7d692944d006da",
     "README.md": "a1d25943b0e022050ffc6fe786137e75",
