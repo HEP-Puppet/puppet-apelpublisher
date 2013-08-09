@@ -32,7 +32,8 @@
     "spec/spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
     "templates/client.cfg.erb": "a70dbd62380d0387e1ba413ab5484087",
     "templates/sender.cfg.erb": "de5412592f66f2cf3a89eff15b338b04",
-    "tests/init.pp": "54fa00a0286581e6effb80fc6f48b770"
+    "tests/init.pp": "54fa00a0286581e6effb80fc6f48b770",
+    "tests/repositories.pp": "940083bccfbdf51d433f854f7ba314de"
   },
   "dependencies": [
     {
