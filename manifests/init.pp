@@ -10,7 +10,7 @@
 #
 # Sample Usage:
 #
-class apelpublisher () inherits apelpublisher::params {
+class apelpublisher {
   class { 'apelpublisher::repositories': }
 
   class { 'apelpublisher::install': }
@@ -21,6 +21,8 @@ class apelpublisher () inherits apelpublisher::params {
 
   class { 'apelpublisher::cron': }
 
+  class { 'apelpublisher::service': }
+
   Class['apelpublisher::repositories'] -> Class['apelpublisher::install'] -> Class['apelpublisher::create_database'] -> 
-  Class['apelpublisher::config'] -> Class['apelpublisher::cron']
+  Class['apelpublisher::config'] -> Class['apelpublisher::cron'] -> Class['apelpublisher::service']
 }
