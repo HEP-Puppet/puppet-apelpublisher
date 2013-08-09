@@ -8,6 +8,8 @@
   "summary": "A Puppet module for the installation and setup of a Apel publisher",
   "version": "0.0.2",
   "checksums": {
+    ".gemfile": "f2a73f3c76933e38e004d3c2a939c56c",
+    ".travis.yml": "423b3afa6b2a26cee85e82b1662aafcf",
     "Modulefile": "405478580f69d5601a7d692944d006da",
     "README.md": "a1d25943b0e022050ffc6fe786137e75",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
