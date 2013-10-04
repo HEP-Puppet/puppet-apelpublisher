@@ -1,6 +1,6 @@
 class apelpublisher::params {
-  $mysql_root_password       = "changeme"
-  $mysql_apel_password       = "pleasechangeme"
+  $mysql_root_password       = hiera ('apelpublisher::params::mysql_root_password', undef)
+  $mysql_apel_password       = hiera ('apelpublisher::params::mysql_apel_password', undef)
   $list_of_apel_parser_hosts = undef
 
   $mysql_configure_backup    = true
@@ -11,8 +11,8 @@ class apelpublisher::params {
   $mysql_database            = "apelclient"
   $mysql_user                = "apel"
 
-  $site_name                 = "UKI-SOUTHGRID-XXX-HEP"
-  $ldap_host                 = "lcg-bdii.cern.ch"
+  $site_name                 = hiera ('apelpublisher::params::site_name', undef)
+  $ldap_host                 = hiera ('apelpublisher::params::ldap_host', undef)
   $ldap_port                 = 2170
 
   $joiner_local_jobs         = false
@@ -30,7 +30,7 @@ class apelpublisher::params {
   $logging_console           = true
 
   # cron
-  $cron_minutes              = 35
-  $cron_hours                = 1
+ # $cron_minutes              = 35
+ # $cron_hours                = 1
 
 }
