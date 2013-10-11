@@ -11,7 +11,7 @@ class apelpublisher::install  (
   if $install_ca {
   include apelpublisher::ca_policy_egi_core
   }
- }
+ 
   package { [
     "apel-ssm",
     "apel-lib",
@@ -28,7 +28,7 @@ class apelpublisher::install  (
   ############################
   # MySQL server and settings
   ############################
-  class { 'mysql::server':
+  class { '::mysql::server':
     config_hash => {
       'root_password' => $mysql_root_password,
     }
@@ -38,11 +38,10 @@ class apelpublisher::install  (
   }
 
   if $mysql_configure_backup {
-    class { 'mysql::backup':
+    class { '::mysql::server::backup':
       backupuser     => 'root',
       backuppassword => $mysql_root_password,
       backupdir      => $mysql_backup_folder,
     }
   }
-
 }

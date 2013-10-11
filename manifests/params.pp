@@ -4,7 +4,7 @@ class apelpublisher::params {
   $list_of_apel_parser_hosts = undef
 
   $mysql_configure_backup    = true
-  $mysql_backup_folder       = "/tmp/mysql_backup"
+  $mysql_backup_folder       = "/var/mysql_backup"
 
   $mysql_hostname            = "localhost"
   $mysql_port                = 3306
