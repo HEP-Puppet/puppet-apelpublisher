@@ -38,7 +38,7 @@ class apelpublisher::install  (
   }
 
   if $mysql_configure_backup {
-    class { '::mysql::server::backup':
+    class { '::mysql::backup':
       backupuser     => 'root',
       backuppassword => $mysql_root_password,
       backupdir      => $mysql_backup_folder,
