@@ -29,6 +29,8 @@ class apelpublisher::params {
   $logging_level             = "INFO"
   $logging_console           = true
 
+  $setup_repo                = false
+  $install_ca                = false
   # cron
  # $cron_minutes              = 35
  # $cron_hours                = 1

@@ -10,9 +10,11 @@
 #
 # Sample Usage:
 #
-class apelpublisher {
+class apelpublisher inherits apelpublisher::params {
+  
+  
   class { 'apelpublisher::repositories': }
-
+  
   class { 'apelpublisher::install': }
 
   class { 'apelpublisher::create_database': }

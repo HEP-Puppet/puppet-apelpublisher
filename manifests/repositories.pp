@@ -1,4 +1,6 @@
-class apelpublisher::repositories {
+class apelpublisher::repositories inherits apelpublisher::params {
+  
+  if $setup_repo {
   yumrepo { 'epel':
     descr          => 'Extra Packages for Enterprise Linux 6 - $basearch',
     enabled        => 1,
@@ -47,4 +49,9 @@ class apelpublisher::repositories {
     enabled  => 1,
     priority => 40,
   }
+ }
+ else {
+   notify {" repositories are not setup by this module" :}
+ }
+
 }
