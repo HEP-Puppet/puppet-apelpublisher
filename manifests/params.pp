@@ -1,9 +1,9 @@
 class apelpublisher::params {
   $mysql_root_password       = hiera ('apelpublisher::params::mysql_root_password', undef)
   $mysql_apel_password       = hiera ('apelpublisher::params::mysql_apel_password', undef)
-  $list_of_apel_parser_hosts = undef
+  $list_of_apel_parser_hosts = hiera ('apelpublisher::params::list_of_apel_parser_hosts', {})
 
-  $mysql_configure_backup    = true
+  $mysql_configure_backup    = false
   $mysql_backup_folder       = "/var/mysql_backup"
 
   $mysql_hostname            = "localhost"
@@ -17,7 +17,7 @@ class apelpublisher::params {
 
   $joiner_local_jobs         = false
   $joiner_enabled            = true
-
+  $destination_queue         = hiera ('apelpublisher::params::destination_queue', '/queue/global.accounting.cpu.central')
   $unloader_enabled          = true
   $unloader_dir_location     = "/var/spool/apel/"
   $unloader_send_summaries   = false
@@ -31,8 +31,9 @@ class apelpublisher::params {
 
   $setup_repo                = false
   $install_ca                = false
+  $manage_db		     = false	
   # cron
- # $cron_minutes              = 35
- # $cron_hours                = 1
+  $cron_minutes              = 35
+  $cron_hours                = 1
 
 }

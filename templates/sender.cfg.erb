@@ -34,7 +34,7 @@ capath: /etc/grid-security/certificates
 [messaging]
 
 # Queue to which SSM will send messages
-destination: 
+destination: <%= @destination_queue %>
 
 # Outgoing messages will be read and removed from this directory.
 path: /var/spool/apel/outgoing
@@ -43,5 +43,5 @@ path: /var/spool/apel/outgoing
 logfile: /var/log/apel/ssmsend.log
 # Available logging levels:
 # DEBUG, INFO, WARN, ERROR, CRITICAL
-level: INFO
+level: DEBUG
 console: true

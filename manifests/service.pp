@@ -7,6 +7,10 @@ class apelpublisher::service (
     $pkgname = fetch-crl
   }
 
+  package { "$pkgname" :
+    ensure => present,
+   }  
+
   service { "${pkgname}-boot":
     ensure     => $runboot,
     enable     => $runboot,
@@ -19,6 +23,6 @@ class apelpublisher::service (
     enable     => $runcron,
     hasstatus  => true,
     hasrestart => true,
-    require    => Class["fetchcrl::install"];
+    require    => Package["$pkgname"];
   }
 }

@@ -28,20 +28,21 @@ class apelpublisher::install  (
   ############################
   # MySQL server and settings
   ############################
+  
+
   class { '::mysql::server':
-    config_hash => {
-      'root_password' => $mysql_root_password,
-    }
+    root_password => "$mysql_root_password",
+    override_options => { 'mysqld' => { 'bind_address' => '0.0.0.0'} }
   }
 
-  class { 'mysql':
-  }
+#  class { 'mysql':
+#  }
 
   if $mysql_configure_backup {
-    class { '::mysql::backup':
+    class { '::mysql::server::backup':
       backupuser     => 'root',
-      backuppassword => $mysql_root_password,
-      backupdir      => $mysql_backup_folder,
+      backuppassword => "$mysql_root_password",
+      backupdir      => "$mysql_backup_folder",
     }
   }
 }

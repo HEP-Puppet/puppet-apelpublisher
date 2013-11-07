@@ -21,8 +21,8 @@ class apelpublisher::create_database (
   exec { 'create-apel-mysql-tables':
     command => '/usr/bin/mysql --defaults-file=/root/.my.cnf apelclient < /usr/share/apel/client.sql',
     require => [
-      Class["apelpublisher::install"],
-      Database[$mysql_database]],
+#      Class["apelpublisher::install"],
+      Mysql_database[$mysql_database]],
     # needs check if already exists, otherwise will wipe the tables!
     onlyif  => [
       '/usr/bin/test `/usr/bin/mysql --defaults-file=/root/.my.cnf -e "use apelclient; show tables;SELECT FOUND_ROWS();" 2>&1 | cut -f1 | egrep "^(0|[1-9][0-9]*)$"` -eq 0',
