@@ -17,7 +17,7 @@ class apelpublisher inherits apelpublisher::params {
   
   class { 'apelpublisher::install': }
 
-#  class { 'apelpublisher::create_database': }
+  class { 'apelpublisher::create_database': }
 
   class { 'apelpublisher::config': }
 
@@ -25,6 +25,5 @@ class apelpublisher inherits apelpublisher::params {
 
   class { 'apelpublisher::service': }
 
-#  Class['apelpublisher::repositories'] -> Class['apelpublisher::install'] -> Class['apelpublisher::create_database'] ->  Class['apelpublisher::config'] -> Class['apelpublisher::cron'] -> Class['apelpublisher::service']
-Class['apelpublisher::repositories'] -> Class['apelpublisher::install'] -> Class['apelpublisher::config'] -> Class['apelpublisher::cron'] -> Class['apelpublisher::service']
+  Class['apelpublisher::repositories'] -> Class['apelpublisher::install'] -> Class['apelpublisher::create_database'] ->  Class['apelpublisher::config'] -> Class['apelpublisher::cron'] -> Class['apelpublisher::service']
 }
