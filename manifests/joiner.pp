@@ -46,4 +46,5 @@ define apelpublisher::joiner(
     hour    => $cron_hours,
     minute  => $cron_minutes,
   }
+  
 }
