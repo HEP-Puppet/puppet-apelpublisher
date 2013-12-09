@@ -3,6 +3,9 @@
  * You must include the apelpublisher::params before cllaing this include if you want to make sure all default params are there.
  * 
  * The resource title can be the GOC DB site name
+ * 
+ * NOTE : you must make sure you included the apelpublisher::install class with your prefered options before using this defined resource.
+ * 
  */
 define apelpublisher::joiner(
   $mysql_hostname          = $apelpublisher::params::mysql_hostname,

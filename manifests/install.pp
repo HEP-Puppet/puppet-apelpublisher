@@ -1,46 +1,26 @@
 class apelpublisher::install (
-  $mysql_root_password    = $apelpublisher::params::mysql_root_password,
-  $mysql_configure_backup = $apelpublisher::params::mysql_configure_backup,
-  $mysql_backup_folder    = $apelpublisher::params::mysql_backup_folder,
-  $mysql_apel_password    = $apelpublisher::params::mysql_apel_password,) {
-  if !$mysql_root_password {
-    notify { "Using empty ROOT password. Please fix.": }
+  $with_repos = true, #use shipped repos ?
+  $with_cas = true, #install certificate authorities ?
+  ) {
+  
+  if($with_cas) {
+    # ca-policy-egi-core
+    class { "apelpublisher::ca_policy_egi_core":
+    }
   }
-
-  # ca-policy-egi-core
-  class { "apelpublisher::ca_policy_egi_core":
+  
+  $repos_req = $with_repos ? {
+    true => [
+      Yumrepo['epel'],
+      Yumrepo['EMI_3_base']],
+    default => []
   }
 
   package { [
     "apel-ssm",
-    "apel-lib",
     "apel-client"]:
     ensure  => present,
-    require => [
-      Yumrepo['epel'],
-      Yumrepo['EMI_3_base']],
-  }
-
-  Package["apel-ssm"] -> Package["apel-lib"] -> Package["apel-client"]
-
-  ############################
-  # MySQL server and settings
-  ############################
-  class { 'mysql::server':
-    config_hash => {
-      'root_password' => $mysql_root_password,
-    }
-  }
-
-  class { 'mysql':
-  }
-
-  if $mysql_configure_backup {
-    class { 'mysql::backup':
-      backupuser     => 'root',
-      backuppassword => $mysql_root_password,
-      backupdir      => $mysql_backup_folder,
-    }
+    require => $repos_req,
   }
 
 }
