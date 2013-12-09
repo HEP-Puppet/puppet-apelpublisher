@@ -26,7 +26,7 @@ ldap_port = <%= ldap_port %>
 #spec_value = 1.0
 
 [joiner]
-enabled = true
+enabled = <%= @joiner_enabled %>
 local_jobs = false
 
 [unloader]
@@ -36,7 +36,7 @@ dir_location = /var/spool/apel/
 # You may send only summaries of your data to the APEL server,
 # rather than individual job records.
 # This reduces the network load.
-send_summaries = false
+send_summaries = <%= @unloader_send_summaries %>
 
 # You may send 'withheld' instead of the user's DN in the 
 # GlobalUserName field.  This is only valid for individual
@@ -66,7 +66,7 @@ interval = latest
 send_ur = false
 
 [ssm]
-enabled = true
+enabled = <%= @ssm_enabled %>
 
 [logging]
 logfile = /var/log/apel/client.log
