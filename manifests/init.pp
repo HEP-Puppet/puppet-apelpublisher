@@ -15,7 +15,7 @@ class apelpublisher {
   ->
   class { 'apelpublisher::install': }
   ->
-  class { 'apelpublisher::config_mysql': }
+  class { 'apelpublisher::config::mysql': }
   ->
   class { 'apelpublisher::create_database': }
   ->

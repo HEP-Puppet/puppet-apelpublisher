@@ -1,4 +1,4 @@
-class apelpublisher::config_mysql(
+class apelpublisher::config::mysql(
   $mysql_root_password    = $apelpublisher::params::mysql_root_password,
   $mysql_configure_backup = $apelpublisher::params::mysql_configure_backup,
   $mysql_backup_folder    = $apelpublisher::params::mysql_backup_folder,
