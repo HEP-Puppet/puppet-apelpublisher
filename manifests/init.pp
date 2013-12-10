@@ -12,17 +12,16 @@
 #
 class apelpublisher {
   class { 'apelpublisher::repositories': }
-
+  ->
   class { 'apelpublisher::install': }
-
+  ->
+  class { 'apelpublisher::config::mysql': }
+  ->
   class { 'apelpublisher::create_database': }
-
+  ->
   class { 'apelpublisher::config': }
-
+  ->
   class { 'apelpublisher::cron': }
-
+  ->
   class { 'apelpublisher::service': }
-
-  Class['apelpublisher::repositories'] -> Class['apelpublisher::install'] -> Class['apelpublisher::create_database'] -> 
-  Class['apelpublisher::config'] -> Class['apelpublisher::cron'] -> Class['apelpublisher::service']
 }

@@ -7,7 +7,7 @@
 # The SSM will query a BDII to find brokers available.  These details are for the 
 # EGI production broker network
 bdii: ldap://lcg-bdii.cern.ch:2170
-network: PROD
+network: <%= @msg_network %>
 # OR (these details will only be used if the broker network settings aren't used)
 #host: test-msg01.afroditi.hellasgrid.gr
 #port: 6163
@@ -34,7 +34,7 @@ capath: /etc/grid-security/certificates
 [messaging]
 
 # Queue to which SSM will send messages
-destination: 
+destination: <%= @destination_queue %>
 
 # Outgoing messages will be read and removed from this directory.
 path: /var/spool/apel/outgoing

@@ -16,7 +16,8 @@ class apelpublisher::config (
   $ssm_enabled             = $apelpublisher::params::ssm_enabled,
   $logging_logfile         = $apelpublisher::params::logging_logfile,
   $logging_level           = $apelpublisher::params::logging_level,
-  $logging_console         = $apelpublisher::params::logging_console,) inherits apelpublisher::params {
+  $logging_console         = $apelpublisher::params::logging_console,
+  ) inherits apelpublisher::params {
     
   file { '/etc/apel/client.cfg':
     owner   => "root",
@@ -26,11 +27,5 @@ class apelpublisher::config (
     require => [Package['apel-client'],Package['apel-ssm']],
   }
   
-  file { '/etc/apel/sender.cfg':
-    owner   => "root",
-    group   => "root",
-    ensure  => "present",
-    content => template("${module_name}/sender.cfg.erb"),
-    require => Package['apel-ssm'],
-  }
+  include apelpublisher::ssm::sender
 }

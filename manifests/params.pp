@@ -24,6 +24,8 @@ class apelpublisher::params {
   $unloader_withhold_dns     = false
 
   $ssm_enabled               = true
+  $destination_queue         = '/queue/global.accounting.cputest.central' #originally not configured by default. Change cputest to cpu when ready
+  $msg_network               = 'TEST-NWOB' #change to PROD when ready
 
   $logging_logfile           = "/var/log/apel/client.log"
   $logging_level             = "INFO"
