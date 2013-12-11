@@ -26,7 +26,7 @@
     "manifests\\init.pp": "b062fa05e350adea5ee97dd52711d71e",
     "manifests\\install.pp": "9f495ada9b45357cafb222605cff2400",
     "manifests\\joiner.pp": "5b18976cfa42e037ebba13bc04095fa0",
-    "manifests\\params.pp": "51f0583bbdb2808f2f2e2f173fcd69bc",
+    "manifests\\params.pp": "6a98676ab058ae0ebc186110bbd4bb01",
     "manifests\\repositories.pp": "7e10b42bee692cb501de1fa939dcb4ef",
     "manifests\\service.pp": "fc99412ffd2af176665bd67d4e45face",
     "manifests\\ssm\\sender.pp": "052e9172cf28e1d40eeaa3a98bcc7c4f",
