@@ -6,7 +6,7 @@
 
 # The SSM will query a BDII to find brokers available.  These details are for the 
 # EGI production broker network
-bdii: <%= @ldap_host %>
+bdii: ldap://<%= @ldap_host %>:2170
 network: <%= @msg_network %>
 # OR (these details will only be used if the broker network settings aren't used)
 #host: test-msg01.afroditi.hellasgrid.gr
