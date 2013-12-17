@@ -6,7 +6,7 @@
 
 # The SSM will query a BDII to find brokers available.  These details are for the 
 # EGI production broker network
-bdii: ldap://lcg-bdii.cern.ch:2170
+bdii: ldap://<%= @ldap_host %>:2170
 network: <%= @msg_network %>
 # OR (these details will only be used if the broker network settings aren't used)
 #host: test-msg01.afroditi.hellasgrid.gr
@@ -14,7 +14,7 @@ network: <%= @msg_network %>
 
 # broker authentication.  If use_ssl is set, the certificates configured
 # in the mandatory [certificates] section will be used. 
-use_ssl: true
+use_ssl: <%= @use_ssl %>
 
 
 ################################################################################
