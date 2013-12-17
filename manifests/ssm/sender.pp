@@ -6,6 +6,8 @@
  class apelpublisher::ssm::sender(
    $destination_queue         = $apelpublisher::params::destination_queue,
    $msg_network               = $apelpublisher::params::msg_network,
+   $ldap_host                 = $apelpublisher::params::ldap_host,
+   $use_ssl                   = $apelpublisher::params::use_ssl,
  ) inherits apelpublisher::params {
    
    file { '/etc/apel/sender.cfg':

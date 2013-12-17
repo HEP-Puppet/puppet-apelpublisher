@@ -26,6 +26,7 @@ class apelpublisher::params {
   $ssm_enabled               = true
   $destination_queue         = '/queue/global.accounting.cputest.CENTRAL' #originally not configured by default. Change cputest to cpu when ready. Warning case sensitive !
   $msg_network               = 'TEST-NWOB' #change to PROD when ready
+  $use_ssl                   = true #beware : the test brokers do not support SSL, but it is better to leave this on by default, for production
 
   $logging_logfile           = "/var/log/apel/client.log"
   $logging_level             = "INFO"
