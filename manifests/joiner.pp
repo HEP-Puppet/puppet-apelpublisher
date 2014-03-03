@@ -41,7 +41,7 @@ define apelpublisher::joiner(
   }
   
   cron { "apelclient-${title}":
-    command => "/usr/bin/apelclient -c $config",
+    command => "/usr/bin/apelclient -c $config >> /var/log/apel-joiner-${title}.log 2>&1",
     user    => root,
     hour    => $cron_hours,
     minute  => $cron_minutes,
