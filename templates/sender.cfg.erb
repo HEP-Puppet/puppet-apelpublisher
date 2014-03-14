@@ -4,7 +4,7 @@
 
 [broker]
 
-# The SSM will query a BDII to find brokers available.  These details are for the 
+# The SSM will query a BDII to find brokers available.  These details are for the
 # EGI production broker network
 bdii: ldap://<%= @ldap_host %>:2170
 network: <%= @msg_network %>
@@ -13,7 +13,7 @@ network: <%= @msg_network %>
 #port: 6163
 
 # broker authentication.  If use_ssl is set, the certificates configured
-# in the mandatory [certificates] section will be used. 
+# in the mandatory [certificates] section will be used.
 use_ssl: <%= @use_ssl %>
 
 

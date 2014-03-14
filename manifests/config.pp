@@ -17,16 +17,16 @@ class apelpublisher::config (
   $logging_logfile         = $apelpublisher::params::logging_logfile,
   $logging_level           = $apelpublisher::params::logging_level,
   $logging_console         = $apelpublisher::params::logging_console,
-  ) inherits apelpublisher::params {
-    
+) inherits apelpublisher::params {
+
   file { '/etc/apel/client.cfg':
-    owner   => "root",
-    group   => "root",
-    ensure  => "present",
+    owner   => 'root',
+    group   => 'root',
+    ensure  => 'present',
     content => template("${module_name}/client.cfg.erb"),
     require => [Package['apel-client'],Package['apel-ssm']],
-    mode => 600,
+    mode    => '0600',
   }
-  
+
   include apelpublisher::ssm::sender
 }

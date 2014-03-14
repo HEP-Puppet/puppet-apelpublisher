@@ -1,8 +1,8 @@
 {
-  "name": "kreczko-apelpublisher",
+  "name": "heppuppet-apelpublisher",
   "version": "0.0.2",
   "summary": "A Puppet module for the installation and setup of a Apel publisher",
-  "author": "kreczko",
+  "author": "HEP-Puppet",
   "description": "A Puppet module for the installation and setup of a Apel publisher",
   "dependencies": [
     {

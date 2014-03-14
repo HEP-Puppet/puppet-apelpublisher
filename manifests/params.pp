@@ -17,7 +17,6 @@ class apelpublisher::params {
 
   $joiner_local_jobs         = false
   $joiner_enabled            = true
-
   $unloader_enabled          = true
   $unloader_dir_location     = "/var/spool/apel/"
   $unloader_send_summaries   = false

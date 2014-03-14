@@ -1,11 +1,16 @@
 class apelpublisher::service (
   $runboot = false,
-  $runcron = true,) {
+  $runcron = true,
+) {
   if $::osfamily == 'RedHat' and $::operatingsystemversion =~ /^5\..*/ {
-    $pkgname = fetch-crl3
+    $pkgname = 'fetch-crl3'
   } else {
-    $pkgname = fetch-crl
+    $pkgname = 'fetch-crl'
   }
+
+  package { $pkgname :
+    ensure => 'present',
+   }
 
   service { "${pkgname}-boot":
     ensure     => $runboot,
@@ -19,6 +24,6 @@ class apelpublisher::service (
     enable     => $runcron,
     hasstatus  => true,
     hasrestart => true,
-    require    => Class["fetchcrl::install"];
+    require    => Package[$pkgname];
   }
 }
