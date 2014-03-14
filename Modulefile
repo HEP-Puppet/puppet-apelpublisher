@@ -1,4 +1,4 @@
-name 'apelpublisher'
+name 'heppuppet-apelpublisher'
 version '0.0.2'
 
 author 'HEP-Puppet'
