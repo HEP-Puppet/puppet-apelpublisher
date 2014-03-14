@@ -1,5 +1,5 @@
 {
-  "name": "apelpublisher",
+  "name": "heppuppet-apelpublisher",
   "version": "0.0.2",
   "summary": "A Puppet module for the installation and setup of a Apel publisher",
   "author": "HEP-Puppet",
