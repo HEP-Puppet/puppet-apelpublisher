@@ -38,7 +38,7 @@ define apelpublisher::joiner(
     ensure  => "present",
     content => template("${module_name}/client.cfg.erb"),
     require => Package['apel-client'],
-    mode => 600,
+    mode => '0600',
   }
   
   cron { "apelclient-${title}":

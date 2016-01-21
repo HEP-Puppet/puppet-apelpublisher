@@ -25,7 +25,7 @@ class apelpublisher::config (
     ensure  => "present",
     content => template("${module_name}/client.cfg.erb"),
     require => [Package['apel-client'],Package['apel-ssm']],
-    mode => 600,
+    mode => '0600',
   }
   
   include apelpublisher::ssm::sender

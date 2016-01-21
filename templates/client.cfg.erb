@@ -1,17 +1,17 @@
 # Information about the apel client database
 [db]
-hostname = <%= mysql_hostname %>
-port = <%= mysql_port %>
-name = <%= mysql_database %>
-username = <%= mysql_user %>
-password = <%= mysql_password %>
+hostname = <%= @mysql_hostname %>
+port = <%= @mysql_port %>
+name = <%= @mysql_database %>
+username = <%= @mysql_user %>
+password = <%= @mysql_password %>
 
 [spec_updater]
 enabled = true
 # The GOCDB site name
-site_name = <%= site_name %>
-ldap_host = <%= ldap_host %>
-ldap_port = <%= ldap_port %>
+site_name = <%= @site_name %>
+ldap_host = <%= @ldap_host %>
+ldap_port = <%= @ldap_port %>
 
 ## The following information is necessary for 
 ## local jobs only.  Provide an average value for
